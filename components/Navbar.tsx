@@ -22,7 +22,7 @@ const Navbar = () => {
             setNavActive(false);
           }}
         >
-          <h1 className="logo">Davy's Blog</h1>
+          <h1 className="logo">Davy&apos;s Blog</h1>
         </Link>
         <div
           onClick={() => setNavActive(!navActive)}
