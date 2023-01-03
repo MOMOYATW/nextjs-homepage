@@ -1,0 +1,33 @@
+.nav__link {
+  font-size: 18px;
+  position: relative;
+  transition: all 0.2s;
+  width: 100%;
+  display: block;
+}
+
+.nav__link:hover {
+  font-weight: bold;
+}
+
+.nav__link_active {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  .nav__link::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    bottom: -16px;
+    left: 0;
+    height: 6px;
+    transition: all 0.2s;
+    background-color: rgb(var(--navbar-foreground-rgb));
+  }
+
+  .nav__link:hover::before,
+  .nav__link_active::before {
+    width: 100%;
+  }
+}
