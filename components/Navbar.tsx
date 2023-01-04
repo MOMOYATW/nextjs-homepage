@@ -1,17 +1,20 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useTheme } from "next-themes";
 import NavItem from "./NavItem";
 import Link from "next/link";
 import styles from "../styles/Navbar.module.css";
 const MENU_LIST = [
-  { text: "Posts", href: "/" },
-  { text: "Tags", href: "/" },
-  { text: "About", href: "/" },
-  { text: "RSS", href: "/" },
+  { text: "Posts", href: "/posts" },
+  { text: "Tags", href: "/tags" },
+  { text: "About", href: "/about" },
+  { text: "RSS", href: "/rss.xml" },
 ];
 
 const Navbar = () => {
   const [navActive, setNavActive] = useState(false);
   const [activeIdx, setActiveIdx] = useState(-1);
+  const { theme, setTheme } = useTheme();
+
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
@@ -22,7 +25,7 @@ const Navbar = () => {
             setNavActive(false);
           }}
         >
-          <h1 className="logo">Davy&apos;s Blog</h1>
+          <h1 className="logo">Davy Tao</h1>
         </Link>
         <div
           onClick={() => setNavActive(!navActive)}
@@ -54,6 +57,12 @@ const Navbar = () => {
               </div>
             );
           })}
+          <div>
+            <button
+              className={`${styles.theme_toggle}`}
+              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            ></button>
+          </div>
         </div>
       </nav>
     </header>
