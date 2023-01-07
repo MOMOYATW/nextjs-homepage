@@ -18,12 +18,7 @@ export default function Home() {
         <h1>
           <Typewriter
             options={{
-              strings: [
-                "Hi there",
-                "Welcome to my blog",
-                "This blog is currently under construction",
-                "We will meet very soon",
-              ],
+              strings: ["Hi there", "Welcome to my blog"],
               autoStart: true,
               loop: true,
             }}

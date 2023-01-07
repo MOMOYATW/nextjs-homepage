@@ -10,7 +10,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
-
+  --side-bar-bg-color: #fafafa;
+  --codeblock-color: #f7f6f3;
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
     #16abff33 0deg,
@@ -49,7 +50,7 @@
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 52, 52, 52;
   --background-end-rgb: 52, 52, 52;
-
+  --codeblock-color: #1e1e1e;
   --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
   --secondary-glow: linear-gradient(
     to bottom right,

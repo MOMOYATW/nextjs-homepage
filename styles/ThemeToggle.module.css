@@ -1,0 +1,35 @@
+.theme_toggle {
+  height: 40px;
+  width: 40px;
+  border: none;
+  background-color: transparent;
+  transition: all 0.2s;
+  cursor: pointer;
+  margin-top: 40px;
+  border-radius: 20px;
+  align-items: center;
+  display: flex;
+}
+
+.theme_toggle svg {
+  fill: rgb(var(--navbar-foreground-rgb));
+  height: 80%;
+  width: 80%;
+  margin: auto;
+}
+
+.theme_toggle:hover {
+  background-color: rgba(var(--navbar-foreground-rgb), 0.2);
+}
+
+[data-theme="dark"] .theme_toggle {
+  transition: all 0.2s;
+}
+
+@media screen and (min-width: 768px) {
+  .theme_toggle {
+    margin-top: 0;
+    height: 35px;
+    width: 35px;
+  }
+}

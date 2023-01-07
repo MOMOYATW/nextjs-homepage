@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import styles from "../../styles/About.module.css";
 
 function About() {
   return (
@@ -10,8 +11,24 @@ function About() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="favicon.ico" />
       </Head>
-      <div>
+      <div className={`${styles.center} ${styles.fade_in}`}>
         <h1>About</h1>
+        <p>
+          Hi, my name is Davy Tao, a Master of Science Student from China. In
+          this blog, I'd like to share some notes I made while learning
+          something new. Since I am not a native English speaker, some posts may
+          have grammar errors or typo issues. I will try to avoid these, though
+          I would appreciate it if you could help spot them.
+        </p>
+        <p>
+          This About page is a provisional version and will be a prolific page
+          in the future.
+        </p>
+        <p>
+          This year, I aim to learn and build this website and improve my
+          English. If time is sufficient, I would also like to learn Japanese.
+        </p>
+        <p>Anyway, I hope you have a good time on my website.</p>
       </div>
     </>
   );

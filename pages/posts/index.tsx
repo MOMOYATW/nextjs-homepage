@@ -1,8 +1,12 @@
 import Head from "next/head";
 import React from "react";
 import styles from "../../styles/Posts.module.css";
+import getAllPublished from "../../lib/notion";
+import PostCard from "../../components/PostCard";
+import { queryDatabase } from "../../lib/queryDatabase";
+import { getPublishedPosts } from "../../lib/getPublishedPosts";
 
-function Posts() {
+function Posts({ posts }: { posts: any }) {
   return (
     <>
       <Head>
@@ -11,9 +15,23 @@ function Posts() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="favicon.ico" />
       </Head>
-      <h1>Posts</h1>
+      <div className={`${styles.container} ${styles.fade_in}`}>
+        {posts.map((post: any, index: any) => (
+          <PostCard post={post} key={post.id} />
+        ))}
+      </div>
     </>
   );
 }
 
 export default Posts;
+
+export const getStaticProps = async () => {
+  const data = await getAllPublished();
+  // const test = await getPublishedPosts();
+
+  return {
+    props: { posts: data },
+    revalidate: 60,
+  };
+};
