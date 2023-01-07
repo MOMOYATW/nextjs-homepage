@@ -15,7 +15,7 @@ function About() {
         <h1>About</h1>
         <p>
           Hi, my name is Davy Tao, a Master of Science Student from China. In
-          this blog, I'd like to share some notes I made while learning
+          this blog, I&apos;d like to share some notes I made while learning
           something new. Since I am not a native English speaker, some posts may
           have grammar errors or typo issues. I will try to avoid these, though
           I would appreciate it if you could help spot them.

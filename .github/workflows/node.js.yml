@@ -23,7 +23,7 @@ jobs:
         run: npm ci
 
       - name: Build my App
-        run: npm run build && npm run export
+        run: NOTION_TOKEN=${{ secrets.NOTION_TOKEN }} DATABASE_ID=${{ secrets.DATABASE_ID }} NOTION_USER_ID=${{ secrets.NOTION_USER_ID }} NOTION_TOKEN_V2=${{ secrets.NOTION_TOKEN_V2 }} npm run build && npm run export
 
       - name: Deploy 🚀
         uses: peaceiris/actions-gh-pages@v3
