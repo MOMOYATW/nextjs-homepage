@@ -34,7 +34,7 @@ const formatPageMeta = (results: any[]) => {
 export const getPublishedPosts = async () => {
   // page size may not enough in the future
   // currently request one time should be ok
-  console.log(process.env.DATABASE_ID);
+  console.log(process.env.NOTION_TOKEN);
   const pages = await notion.databases.query({
     database_id: process.env.DATABASE_ID!,
     filter: {
