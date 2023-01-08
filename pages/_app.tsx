@@ -1,13 +1,13 @@
 import "../styles/globals.css";
+import "nprogress/nprogress.css";
 import "react-notion-x/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
 import type { AppProps } from "next/app";
+import Router from "next/router";
+import { ThemeProvider } from "next-themes";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { ThemeProvider } from "next-themes";
 import NProgress from "nprogress";
-import "nprogress/nprogress.css";
-import Router from "next/router";
 
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());

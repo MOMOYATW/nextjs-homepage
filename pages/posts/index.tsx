@@ -1,10 +1,8 @@
 import Head from "next/head";
 import React from "react";
 import styles from "../../styles/Posts.module.css";
-import getAllPublished from "../../lib/notion";
 import PostCard from "../../components/PostCard";
-import { queryDatabase } from "../../lib/queryDatabase";
-import { getPublishedPosts } from "../../lib/getPublishedPosts";
+import { getPublishedPosts } from "../../lib/notion";
 
 function Posts({ posts }: { posts: any }) {
   return (
@@ -27,11 +25,9 @@ function Posts({ posts }: { posts: any }) {
 export default Posts;
 
 export const getStaticProps = async () => {
-  const data = await getAllPublished();
-  // const test = await getPublishedPosts();
-
+  const posts = await getPublishedPosts();
   return {
-    props: { posts: data },
+    props: { posts },
     revalidate: 60,
   };
 };

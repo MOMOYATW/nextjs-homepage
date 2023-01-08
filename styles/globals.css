@@ -6,7 +6,7 @@
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-
+  --code-color: #eb6060;
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
@@ -47,6 +47,7 @@
 }
 
 [data-theme="dark"] {
+  --code-color: #d4d4d4;
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 52, 52, 52;
   --background-end-rgb: 52, 52, 52;

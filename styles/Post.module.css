@@ -1,0 +1,92 @@
+.container {
+  max-width: 720px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  flex-direction: column;
+}
+
+.container div {
+  line-height: 2rem !important;
+}
+.description {
+  padding-left: calc(min(16px, 8vw));
+  padding-right: calc(min(16px, 8vw));
+  box-sizing: border-box;
+}
+
+.container h1,
+.container h2,
+.container h3 {
+  display: block;
+  margin: 2rem 0 1rem;
+}
+
+.container h1 {
+  font-size: 2rem;
+  line-height: 1.33;
+}
+
+.container h2 {
+  font-size: 1.6rem;
+  line-height: 1.33;
+}
+
+.container h3 {
+  font-size: 1.2rem;
+  line-height: 1.33;
+}
+
+.container code,
+.container pre {
+  font-size: 0.75rem;
+  background-color: var(--codeblock-color);
+  padding: 0.3rem 0.2rem;
+  border-radius: 4px;
+  color: var(--code-color);
+}
+
+.container pre {
+  padding: 0.5rem 1rem;
+}
+
+.container a {
+  color: rgba(var(--foreground-rgb), 0.5);
+  border-bottom: 1px solid;
+}
+
+.container ol {
+  width: 100%;
+}
+
+.container pre {
+  padding: 1.5rem 1rem;
+}
+
+.tags {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.tags div {
+  display: inline-block;
+  border: 2px solid rgba(var(--foreground-rgb), 0.7);
+  border-radius: 1rem;
+  line-height: 1.4rem !important;
+  padding: 0 5px;
+  color: rgba(var(--foreground-rgb), 0.7);
+}
+
+.tags div:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.authors {
+  font-size: 1.2rem;
+}
+
+.description {
+  margin-bottom: 1rem;
+}

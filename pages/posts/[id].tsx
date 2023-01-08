@@ -1,9 +1,12 @@
 import Head from "next/head";
-import dynamic from "next/dynamic";
-import { useTheme } from "next-themes";
 import { NotionRenderer } from "react-notion-x";
-import styles from "../../styles/Markdown.module.css";
-import { getSinglePost } from "../../lib/getSinglePost";
+import { getSinglePost, getPublishedPosts } from "../../lib/notion";
+import styles from "../../styles/Post.module.css";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+import { Text } from "../../components/Text";
+
+import dynamic from "next/dynamic";
 
 const Code = dynamic(() =>
   import("react-notion-x/build/third-party/code").then((m) => m.Code)
@@ -29,8 +32,17 @@ const Modal = dynamic(
   }
 );
 
-const Post = ({ post }: { post: any }) => {
+const Post = ({ page, meta }: { page: any; meta: any }) => {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  console.log(meta);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
   return (
     <>
       <Head>
@@ -39,29 +51,35 @@ const Post = ({ post }: { post: any }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="favicon.ico" />
       </Head>
-      {post && (
-        <div className={styles.post}>
-          <div className={styles.title}>
-            <div className={styles.time}>{post.date}</div>
-            <h1>
-              {post.title.map((text: any, index: number) => text.plain_text)}
-            </h1>
-            <div className={styles.authors}>By {post.authors}</div>
+      <div className={styles.container}>
+        <div className={styles.description}>
+          <div className={styles.time}>
+            <span>{meta?.date}</span>
           </div>
-          <NotionRenderer
-            recordMap={post.page}
-            components={{
-              Code,
-              Collection,
-              Equation,
-              Modal,
-              Pdf,
-            }}
-            fullPage={false}
-            darkMode={theme === "dark"}
-          ></NotionRenderer>
+          <h1>
+            <Text text={meta?.title}></Text>
+          </h1>
+          <div className={styles.authors}>By {meta.authors}</div>
+
+          <div className={styles.tags}>
+            {meta?.tags.map((tag: any, index: number) => (
+              <div key={index}>{tag.name}</div>
+            ))}
+          </div>
         </div>
-      )}
+        <hr />
+        <NotionRenderer
+          recordMap={page}
+          components={{
+            Code,
+            Collection,
+            Equation,
+            Modal,
+            Pdf,
+          }}
+          darkMode={theme === "dark"}
+        ></NotionRenderer>
+      </div>
     </>
   );
 };
@@ -69,17 +87,22 @@ const Post = ({ post }: { post: any }) => {
 export default Post;
 
 export const getStaticProps = async ({ params }: { params: any }) => {
-  const data = await getSinglePost(params.id);
-  console.log(data);
+  const { page, meta } = await getSinglePost(params.id);
   return {
-    props: { post: data },
+    props: {
+      page,
+      meta,
+    },
     revalidate: 60,
   };
 };
 
 export const getStaticPaths = async () => {
+  const posts = await getPublishedPosts();
   return {
-    paths: [],
+    paths: posts.map((post) => ({
+      params: { id: post.id },
+    })),
     fallback: true,
   };
 };
