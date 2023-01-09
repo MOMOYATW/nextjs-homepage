@@ -3,11 +3,11 @@ import { getPublishedPosts } from "./notion";
 import fs from "fs";
 
 export const generateRssFeed = async () => {
-  const site_url = "localhost:3000";
+  const site_url = "https://blog.davytao.me";
   const allPosts = await getPublishedPosts();
   const feedOptions = {
-    title: "Blog posts | RSS Feed",
-    description: "Welcome to my blog posts!",
+    title: "Davy Tao",
+    description: "Hi there, Welcome to my blog!",
     site_url: site_url,
     feed_url: `${site_url}/rss.xml`,
     image_url: `${site_url}/icon.png`,
