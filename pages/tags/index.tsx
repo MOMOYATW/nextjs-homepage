@@ -13,7 +13,8 @@ function Tags({ tags }: { tags: any }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="favicon.ico" />
       </Head>
-      <div className={styles.container}>
+      <h1 className={`${styles.title} ${styles.fade_in}`}>All tags</h1>
+      <div className={`${styles.container} ${styles.fade_in}`}>
         {Object.keys(tags).map((tag) => (
           <div key={tag}>
             <Link href={`/tags/${tag}`}>
