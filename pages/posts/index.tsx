@@ -3,6 +3,7 @@ import React from "react";
 import styles from "../../styles/Posts.module.css";
 import PostCard from "../../components/PostCard";
 import { getPublishedPosts } from "../../lib/notion";
+import { generateRssFeed } from "../../lib/generateRSSFeed";
 
 function Posts({ posts }: { posts: any }) {
   return (
@@ -29,6 +30,7 @@ export default Posts;
 
 export const getStaticProps = async () => {
   const posts = await getPublishedPosts();
+  await generateRssFeed();
   return {
     props: { posts },
     revalidate: 60,
