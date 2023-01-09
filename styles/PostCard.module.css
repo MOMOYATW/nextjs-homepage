@@ -46,9 +46,10 @@
 }
 
 .tags div {
+  margin-bottom: 10px;
   display: inline-block;
   border: 2px solid rgba(var(--foreground-rgb), 0.7);
-  border-radius: 0.75rem;
+  border-radius: 1rem;
   line-height: 1.5rem;
   padding: 0 5px;
   color: rgba(var(--foreground-rgb), 0.7);

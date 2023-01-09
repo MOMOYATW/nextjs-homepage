@@ -6,14 +6,14 @@ export const Text = ({ text }: { text: any[] }) => {
   }
   return (
     <>
-      {text.map((value) => {
+      {text.map((value, index) => {
         const {
           annotations: { bold, code, color, italic, strikethrough, underline },
           text,
         } = value;
         return (
           <div
-            key={text}
+            key={index}
             className={[
               styles.text,
               bold ? styles.bold : "",

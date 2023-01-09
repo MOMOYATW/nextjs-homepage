@@ -1,7 +1,10 @@
 import Head from "next/head";
+import Link from "next/link";
 import React from "react";
+import { getPublishedTags } from "../../lib/notion";
+import styles from "../../styles/Tags.module.css";
 
-function Tags() {
+function Tags({ tags }: { tags: any }) {
   return (
     <div>
       <Head>
@@ -10,9 +13,25 @@ function Tags() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="favicon.ico" />
       </Head>
-      <h1>Tags</h1>
+      <div className={styles.container}>
+        {Object.keys(tags).map((tag) => (
+          <div key={tag}>
+            <Link href={`/tags/${tag}`}>
+              {tag} ({tags[tag]})
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
 
 export default Tags;
+
+export const getStaticProps = async () => {
+  const tags = await getPublishedTags();
+  return {
+    props: { tags },
+    revalidate: 60,
+  };
+};

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import NavItem from "./NavItem";
 import Link from "next/link";
@@ -19,6 +19,10 @@ const Navbar = () => {
   const [activeIdx, setActiveIdx] = useState(
     MENU_LIST.findIndex((menu) => menu.href === router.pathname)
   );
+
+  useEffect(() => {
+    setActiveIdx(MENU_LIST.findIndex((menu) => menu.href === router.pathname));
+  }, [router.pathname]);
 
   return (
     <header className={`${styles.header} ${styles.glass}`}>

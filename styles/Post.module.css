@@ -77,6 +77,13 @@
   line-height: 1.4rem !important;
   padding: 0 5px;
   color: rgba(var(--foreground-rgb), 0.7);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tags div:hover {
+  border: 2px solid rgba(var(--foreground-rgb), 1);
+  color: rgba(var(--foreground-rgb), 1);
 }
 
 .tags div:not(:last-child) {
@@ -89,4 +96,9 @@
 
 .description {
   margin-bottom: 1rem;
+}
+
+.description a {
+  color: unset;
+  border-bottom: unset;
 }

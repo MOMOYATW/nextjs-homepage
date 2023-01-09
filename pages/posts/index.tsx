@@ -13,6 +13,9 @@ function Posts({ posts }: { posts: any }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="favicon.ico" />
       </Head>
+      <h1 className={`${styles.title} ${styles.fade_in}`}>
+        All Published Posts
+      </h1>
       <div className={`${styles.container} ${styles.fade_in}`}>
         {posts.map((post: any, index: any) => (
           <PostCard post={post} key={post.id} />

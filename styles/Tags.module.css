@@ -1,0 +1,33 @@
+.container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.container div {
+  display: inline-block;
+  border: 2px solid rgba(var(--foreground-rgb), 0.7);
+  border-radius: 1rem;
+  line-height: 1.6rem;
+  padding: 1px 10px;
+  color: rgba(var(--foreground-rgb), 0.7);
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 1rem;
+}
+
+.container div:hover {
+  color: rgba(var(--foreground-rgb), 1);
+  border: 2px solid rgba(var(--foreground-rgb), 1);
+  transition: all 0.2s;
+  font-weight: bold;
+}
+
+.container div:not(:last-child) {
+  margin-right: 1rem;
+}
