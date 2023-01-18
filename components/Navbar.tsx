@@ -5,6 +5,7 @@ import Link from "next/link";
 import styles from "../styles/Navbar.module.css";
 import ThemeToggle from "./ThemeToggle";
 import NavToggle from "./NavToggle";
+
 const MENU_LIST = [
   { text: "Home", href: "/" },
   { text: "Posts", href: "/posts" },

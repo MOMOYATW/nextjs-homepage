@@ -18,6 +18,9 @@
   transition: 0.3s;
   margin: 3rem;
   min-width: 10rem;
+  background-color: rgba(var(--card-rgb), 0.2);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
 }
 
 /* On mouse-over, add a deeper shadow */

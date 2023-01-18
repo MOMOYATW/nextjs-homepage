@@ -19,9 +19,9 @@ const ThemeToggle = () => {
   return (
     <div
       className={`${styles.theme_toggle}`}
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      onClick={() => setTheme(theme === "new-year" ? "dark" : "new-year")}
     >
-      {theme === "light" ? <ToggleLight /> : <ToggleDark />}
+      {theme === "new-year" ? <ToggleLight /> : <ToggleDark />}
     </div>
   );
 };

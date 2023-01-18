@@ -4,7 +4,7 @@ import { Inter } from "@next/font/google";
 import styles from "../styles/Home.module.css";
 import Typewriter from "typewriter-effect";
 const inter = Inter({ subsets: ["latin"] });
-
+import RabbitSvg from "../public/rabbit.svg";
 export default function Home() {
   return (
     <>
@@ -15,10 +15,11 @@ export default function Home() {
         <link rel="icon" href="favicon.ico" />
       </Head>
       <div className={`${styles.center} ${styles.main} ${styles.fade_in}`}>
+        <RabbitSvg className={styles.rabbit} />
         <h1>
           <Typewriter
             options={{
-              strings: ["Hi there", "Welcome to my blog"],
+              strings: ["Happy Chinese New Year!", "Welcome to my blog"],
               autoStart: true,
               loop: true,
             }}

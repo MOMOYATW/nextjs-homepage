@@ -46,6 +46,36 @@
   --navbar-foreground-rgb: 27, 27, 27;
 }
 
+[data-theme="new-year"] {
+  --code-color: #d4d4d4;
+  --foreground-rgb: 251, 173, 58;
+  --background-start-rgb: 200, 10, 22;
+  --background-end-rgb: 200, 10, 22;
+  --codeblock-color: #1e1e1e;
+  --primary-glow: transparent;
+  --secondary-glow: transparent;
+
+  --tile-start-rgb: 2, 13, 46;
+  --tile-end-rgb: 2, 5, 19;
+  --tile-border: conic-gradient(
+    #ffffff80,
+    #ffffff40,
+    #ffffff30,
+    #ffffff20,
+    #ffffff10,
+    #ffffff10,
+    #ffffff80
+  );
+
+  --callout-rgb: 20, 20, 20;
+  --callout-border-rgb: 108, 108, 108;
+  --card-rgb: 255, 255, 255;
+  --card-border-rgb: transparent;
+
+  --navbar-background-rgb: 189, 41, 40;
+  --navbar-foreground-rgb: 251, 173, 58;
+}
+
 [data-theme="dark"] {
   --code-color: #d4d4d4;
   --foreground-rgb: 255, 255, 255;
@@ -112,4 +142,8 @@ a {
 
 [data-theme="dark"] html {
   color-scheme: dark;
+}
+
+.notion {
+  color: unset !important;
 }
